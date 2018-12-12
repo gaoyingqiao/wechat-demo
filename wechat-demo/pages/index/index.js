@@ -2,12 +2,15 @@
 //获取应用实例
 const app = getApp()
 
+const API = require('../../utils/api.js')
+
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    list: []
   },
   //事件处理函数
   bindViewTap: function() {
@@ -42,6 +45,17 @@ Page({
         }
       })
     }
+
+    // 使用 Mock
+    API.ajax('', (res) => {
+      //这里既可以获取模拟的res
+      console.log(res)
+      this.setData({
+        list: res.data
+      })
+    });
+
+    console.log(this.data.list)
   },
   getUserInfo: function(e) {
     console.log(e)
