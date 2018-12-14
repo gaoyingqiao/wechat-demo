@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../../../ec-canvas/ec-canvas"
+  },
+  "navigationBarTitleText": "延迟加载Echarts"
+}

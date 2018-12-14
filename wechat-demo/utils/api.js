@@ -16,26 +16,58 @@ function ajax(data = '', fn, method = "get", header = {}) {
     });
   } else {
     // 模拟数据
-    var res = Mock.mock({
-      'error_code': '',
-      'error_msg': '',
-      'data|10': [{
-        'id|+1': 1,
-        'img': "@image('200x100', '#4A7BF7','#fff','pic')",
-        'title': '@ctitle(3,8)',
-        'city': "@county(true)",
-        'stock_num': '@integer(0,100)',//库存数量  
-        'marketing_start': '@datetime()',
-        'marketing_stop': '@now()',
-        'price': '@integer(100,2000)',//现价，单位：分  
-        'original_price': '@integer(100,3000)'
-      }]
-    })
-    // 输出结果
-    // console.log(JSON.stringify(res, null, 2))
+    var res;
+    if (data === '') {
+      res = Mock.mock({
+        'error_code': '',
+        'error_msg': '',
+        'data|10': [{
+          'id|+1': 1,
+          'img': "@image('200x100', '#4A7BF7','#fff','pic')",
+          'title': '@ctitle(3,8)',
+          'city': "@county(true)",
+          'stock_num': '@integer(0,100)',//库存数量  
+          'marketing_start': '@datetime()',
+          'marketing_stop': '@now()',
+          'price': '@integer(100,2000)',//现价，单位：分  
+          'original_price': '@integer(100,3000)'
+        }]
+      })
+    } else if (data === '/carousel') {
+      res = getCarousel()
+    } else if (data === '/charts') {
+      res = getCharts()
+    }
+    console.log(res, 'res')
     fn(res);
   }
 }
+
+// 获取轮播图数据
+function getCarousel() {
+  return Mock.mock({
+    'error_code': '',
+    'error_msg': '',
+    'data|3': [{
+      'id|+1': 1,
+      'img': "@image('355x150', '#4A7BF7', 'red','pic')",
+    }]
+  })
+}
+
+// 获取echarts数据
+function getCharts() {
+  return Mock.mock({
+    'error_code': '',
+    'error_msg': '',
+    'data|7': [{
+      'id|+1': 1,
+      'data1|100-350': 200,
+      'data2|80-240': 100,
+    }]
+  })
+}
+
 module.exports = {
   ajax: ajax
 }

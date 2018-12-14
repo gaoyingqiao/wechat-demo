@@ -1,0 +1,5 @@
+/**lazyCharts.wxss**/
+ec-canvas {
+  width: 100%;
+  height: 500rpx;
+}

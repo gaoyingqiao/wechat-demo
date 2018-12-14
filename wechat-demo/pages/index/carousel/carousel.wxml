@@ -1,0 +1,17 @@
+<!--carousel.html-->
+<view class="container">
+  <swiper
+    class="home-swiper"
+    indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}"
+    interval="{{interval}}"
+    duration="{{duration}}"
+  >
+    <block wx:for="{{carousels}}" wx:key="{{item.id}}">
+      <swiper-item>
+        <!-- http前缀的图片显示不出来 -->
+        <image src="{{item.img}}" class="slide-image" width="355" height="150" /> 
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

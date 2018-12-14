@@ -1,0 +1,4 @@
+<!--charts.wxml-->
+<view class='container'>
+  <ec-canvas id='charts-bar' canvas-id='charts-bar' ec='{{ ec }}'></ec-canvas>
+</view>

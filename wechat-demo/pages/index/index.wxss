@@ -16,6 +16,13 @@
   color: #aaa;
 }
 
-.usermotto {
-  margin-top: 200px;
+.menu-list {
+  width: 90%;
+}
+.menu-item {
+  height: 40px;
+  line-height: 40px;
+  background: #eee;
+  padding: 0 20px;
+  margin-bottom: 10px;
 }

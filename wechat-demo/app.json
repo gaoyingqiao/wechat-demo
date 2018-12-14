@@ -1,6 +1,11 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/index/carousel/carousel",
+    "pages/index/charts/charts",
+    "pages/index/lazyCharts/lazyCharts",
+    "pages/index/mapDemo/mapDemo",
+    "pages/index/mapPolylineDemo/mapPolylineDemo",
     "pages/logs/logs"
   ],
   "window":{

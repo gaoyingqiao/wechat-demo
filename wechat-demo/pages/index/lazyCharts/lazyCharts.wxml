@@ -1,0 +1,6 @@
+<!--lazyCharts.wxml-->
+<view class='container'>
+  <button bindtap="init" wx:if="{{!isLoaded}}">加载图表</button>
+  <button bindtap="dispose" wx:if="{{isLoaded && !isDisposed}}">释放图表</button>
+  <ec-canvas wx:if="{{!isDisposed}}" id='charts-lazy' canvas-id='charts-lazy' ec='{{ ec }}'></ec-canvas>
+</view>

@@ -7,7 +7,12 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+
+  <view class='menu-list'>
+    <block wx:for-items="{{menuList}}" wx:key="{{item.id}}">
+      <navigator url="{{item.pages}}/{{item.pages}}">
+        <view class="menu-item">{{item.name}}</view>
+      </navigator>
+    </block>
   </view>
 </view>

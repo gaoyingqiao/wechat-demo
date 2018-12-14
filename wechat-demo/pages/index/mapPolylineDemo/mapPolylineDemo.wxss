@@ -1,0 +1,8 @@
+.tui-map{
+  width: 100%;
+  /* height: calc(100% - 80rpx); */
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
